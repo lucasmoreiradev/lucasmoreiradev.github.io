@@ -56,11 +56,11 @@ Faça o download do certbot em alguma pasta com o seguinte comando:
 
 Mova o arquivo baixado para a basta `/usr/bin`: 
 
-`mv certbot-auto /usr/bin` e dê permissão para que o arquivo possa fazer alterações na máquina: `chmod 777 /usr/bin/certbot-auto`
+`mv certbot-auto /usr/bin` e dê permissão para que o arquivo possa fazer alterações na máquina: `sudo chown root /usr/bin/certbot-auto` e `sudo chmod 0755 /usr/bin/certbot-auto`.
 
 Pronto! Já está devidamente instalado! Agora é só rodar o comando para que ele possa criar o certificado ssl de forma automática no **nginx**. O comando é: 
 
-`certbot-auto --nginx --no-bootstrap`
+`certbot-auto --nginx`
 
 Após rodar este comando basta preencher o que o CLI dele pedir, escolher as opções que você preferir e... TCHANANN 🎉 o seu sistema já estará funcionando com SSL! =) 
 

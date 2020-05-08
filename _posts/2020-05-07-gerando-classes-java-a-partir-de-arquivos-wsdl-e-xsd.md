@@ -24,13 +24,13 @@ Para consumir um WS SOAP precisamos seguir um contrato de serviço, que é o WSD
 
 ![Imagem de WSDL](https://miro.medium.com/max/1000/1*M7V2X4LQ2HHadCvm66Si3g.jpeg)
 
-Quem está acostumado a lidar apenas com APIs REST e nunca trabalhou com SOAP, pode achar bem mais complicado. E na verdade é, mas existem algumas ferramentes que podem vacilitar bastaaante no nosso trabalho!
+Quem está acostumado a lidar apenas com APIs REST e nunca trabalhou com SOAP, pode achar bem mais complicado. Mas existem algumas ferramentes que podem vacilitar bastaaante no nosso trabalho!
 
 ## Ferramentas
 
-Com o Axis2, por exemplo, podemos pegar um arquivo *wsdl* e gerar as classes de consumo Java automaticamente. Basta fazer o seguinte:
+### Axis2
 
-### Axis
+Com o Axis2, por exemplo, podemos pegar um arquivo *wsdl* e gerar as classes de consumo Java automaticamente. Basta fazer o seguinte:
 
 1	- Baixar o axis2: [http://axis.apache.org/axis2/java/core/download.html](http://axis.apache.org/axis2/java/core/download.html) - Escolher Binary distribution.
 2 - Entrar na pasta do **axis/bin**  e executar o seguinte comando: 
@@ -39,9 +39,9 @@ Com o Axis2, por exemplo, podemos pegar um arquivo *wsdl* e gerar as classes de 
 
 Onde `-uri` é onde está localizado seu arquivo `wsdl`, `-o` é o diretório onde as classes serão geradas, `-noBuildXML` serve para não gerar o arquivo `output.xml` no diretório onde serão geradas as classes, e `-p` é o pacote em que as classes serão geradas.
 
-### JAX-B
-
 Pronto! Com isso já temos as classes de consumo do WebService prontinhas! Mas e os XMLs que serão enviados? Como podemos gerá-los também facilmente? É aí que entra o JAX-B:
+
+### JAX-B
 
 [JAXB](https://jcp.org/aboutJava/communityprocess/mrel/jsr222/)  é parte da JDK, é um dos frameworks mais utilizados para processar documentos XML. Ele possui uma pequena ferramenta de linha de comando chamado [xjc](http://docs.oracle.com/javase/6/docs/technotes/tools/share/xjc.html). Ou seja, se você tem a JDK instalada, não precisa instalar mais nada. Basta rodar o seguinte comando:
 
@@ -51,13 +51,13 @@ Onde `-d` é o diretório do seu projeto e `-p` é o pacote que você deseja col
 
 Pronto! Agora é só popular as classes geradas pelo JAXB e consumir o WebService através das classes geradas pelo Axis2. 
 
-ps: É importante ver a documentação de consumo do WebService, pois podem existir mais alguns passos, como autenticação e protocolo de segurança. :)
+ps: É importante ver a documentação de consumo do WebService, porque podem existir mais alguns passos, como autenticação e protocolo de segurança.
 
 ## Conclusão
 
-Mesmo a grande maioria dos serviços hoje serem disponibilizados através de APIs REST, também é importante saber como funcionam os serviços disponibilizados em SOAP, porque ainda existem muitos sistemas construidos dessa forma. E quem for dar manutenção em legado com certeza vai ter que utilizar. 
+Mesmo a grande maioria dos serviços recentes serem disponibilizados através de APIs REST, também é importante saber como funcionam os serviços disponibilizados em SOAP, porque ainda existem muitos sistemas construidos dessa forma. E quem for dar manutenção em legado com certeza vai precisar ter esse conhecimento. 
 
-Um grande exemplo que eu posso dar são as Notas Fiscais Eletrônicas da Secretaria de Fazenda. Tudo é feito com SOAP e a gente que se vire para consumir. 😬
+Um grande exemplo que eu posso dar são as Notas Fiscais Eletrônicas da Secretaria de Fazenda. Tudo é feito com SOAP!
 
 E vocês, já tiveram que lidar com WebServices SOAP? 
 

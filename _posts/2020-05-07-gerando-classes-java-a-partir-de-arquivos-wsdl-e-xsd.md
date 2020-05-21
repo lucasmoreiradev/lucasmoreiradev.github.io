@@ -35,7 +35,7 @@ Com o Axis2, por exemplo, podemos pegar um arquivo *wsdl* e gerar as classes de 
 1	- Baixar o axis2: [http://axis.apache.org/axis2/java/core/download.html](http://axis.apache.org/axis2/java/core/download.html) - Escolher Binary distribution.
 2 - Entrar na pasta do **axis/bin**  e executar o seguinte comando: 
 
-`wsdl2java.bat -uri <seu.wsdl> -o <output_dir> -noBuildXML  -p br.com.projeto`
+`./wsdl2java.bat -uri <seu.wsdl> -o <output_dir> -noBuildXML  -p br.com.projeto`
 
 Onde `-uri` é onde está localizado seu arquivo `wsdl`, `-o` é o diretório onde as classes serão geradas, `-noBuildXML` serve para não gerar o arquivo `output.xml` no diretório onde serão geradas as classes, e `-p` é o pacote em que as classes serão geradas.
 
